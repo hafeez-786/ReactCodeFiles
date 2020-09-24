@@ -1,0 +1,109 @@
+html {
+    scroll-behavior: smooth;
+  }
+* {
+    color: #383431;
+}
+
+.margn-bottom {
+    margin-bottom: 4rem;
+}
+
+.no-pad {padding: 0px;}
+.pad-left {padding-left: 0px;}
+.pad-right {padding-right: 0px;}
+.pad-top {padding-top: 0px;}
+.pad-bottom {padding-bottom: 0px;}
+
+.Navbar-block .bg-light {
+    background-color: #383431!important;
+    border-top: 2px solid #00923f;
+    border-bottom: 2px solid #00923f;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgb(44, 74, 53));
+}
+.logo-slogan {
+    color: #d6d1d1;
+    font-size: 12px;
+}
+.Navbar-block .navbar-light .navbar-brand {
+    color: #ffffff;
+    text-align: center;
+}
+.Navbar-block .navbar-light .navbar-nav .nav-link {color: #d6d1d1;}
+.Navbar-block .navbar-light .navbar-nav .nav-link:hover {color: #ffffff;}
+
+hr {border: 1px solid #00923f;}
+p {font-size: 14px;}
+.Main-content {
+    width: 100%;
+}
+h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Main-content p {
+    margin-bottom: 5px;
+    color: #606060;
+}   
+h1.main-heading {
+    font-size: 1.6rem;
+    padding: 30px 0px;
+    padding-bottom: 0px;
+    color: #383431;
+}
+.What-we-do .column1,
+.What-we-do .column2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+.service-block {
+    display: flex;
+}
+.serviceFor ul > li > a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+.map-block {
+    border: 1px solid #ccc;
+}
+.contactForm h2 {
+    padding-bottom: 15px;
+}
+.contactForm .btn {
+    background: #00923f;
+    color: #ffffff;
+    border: 1px solid #00923f;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgb(44, 74, 53));
+}
+.contactForm .btn:active {
+    background: #00923f!important;
+    color: #ffffff;
+    border: 1px solid #00923f !important;
+    box-shadow: none;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgb(44, 74, 53));
+}
+
+ul.about-block > li > .nav-link {font-size: 1.2rem;}
+
+.footer-block {
+    width: 100%;
+    padding: 15px;
+    background-color:#1c1b1bed!important;
+    color: white;
+    text-align: center;
+    border-top: 2px solid #00923f;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgb(44, 74, 53));
+ }
+ .footer-block p {font-size: 12px;
+     margin-bottom: 5px;
+     color: #d6d1d1;
+ }
+ 
+ @media (max-width:767px) {
+    h1.main-heading {font-size: 1.3rem;}
+    .contactForm h2 {font-size: 1.2rem; padding-top: 15px;}
+}
+@media (min-width:992px) {
+    .Navbar-block .navbar-expand-lg .navbar-nav {position: absolute; right:0;}
+}

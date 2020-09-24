@@ -1,0 +1,15 @@
+import React, {useState} from 'react';
+import '../Demo/Demo.css';
+
+const Demo = () => {
+  const [fChange, FsetChange] = useState('salman');
+
+  return (
+    <div>
+      <p>{fChange}</p>
+      <input name="fChange" onChange={e => FsetChange(e.target.value)} />
+    </div>
+  )
+}
+
+export default Demo

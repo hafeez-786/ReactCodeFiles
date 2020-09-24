@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+import './App.css';
+import { Radio } from '@material-ui/core'
+
+function App() {
+  const [gender, setGender] = useState("male");
+  const testBtn = (e) => {
+    console.log(e.target.value)
+    setGender(e.target.value)
+  }
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React MUI Checkbox</h2>
+      <div>
+        <Radio value="male"
+          color="primary"
+          checked={gender === "male"}
+          onChange={testBtn}
+        />
+        <span>Male</span>
+      </div>
+      <div>
+        <Radio value="female"
+          checked={gender === "female"}
+          onChange={testBtn} />
+        <span>Female</span>
+      </div>
+      <div>
+        <Radio value="other"
+          checked={gender === "other"}
+          onChange={testBtn} />
+        <span>Other</span>
+      </div>
+      <p>{gender}</p>
+    </div>
+  );
+}
+
+export default App;

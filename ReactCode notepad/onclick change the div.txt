@@ -1,0 +1,36 @@
+import React, { Component } from 'react'
+import './Demo.css'
+
+class Demo extends Component {
+  constructor() {
+    super()
+    this.state = {
+      showMe: true,
+      hideMe: false
+    }
+  }
+  clickMe(){
+    this.setState({
+      showMe: !this.state.showMe,
+      hideMe: !this.state.hideMe
+    })
+  }
+  render() {
+    return (
+      <div>
+        {
+          this.state.showMe ? <div className="demo1">Div</div> : null
+        }
+        {
+          this.state.hideMe ? <div className="demo">Div1</div> : null
+        }
+        <button onClick={()=>this.clickMe()}>Click</button>
+      </div>     
+    )
+  }
+}
+
+export default Demo
+
+
+<img src={process.env.PUBLIC_URL + "../sunset.jpg"} alt="myPic"/>

@@ -1,0 +1,134 @@
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+//import App from './App';
+import Avatar from './Avatar/Avatar';
+
+
+ReactDOM.render(<div className="container-fluid"><Avatar /></div>, 
+    document.getElementById('root'));
+
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+
+_______________________________
+
+Avatarlist.js
+
+import React from 'react'
+
+const Avatarlist = (props) => {
+    return (
+        <div className="col-md-3 col-xs-12">
+            <div className="AvatarStyle bg-primary">
+                <img src={`//joeschmoe.io/api/v1/${props.name}`} />
+                <h1>{props.name}</h1>
+                <p>{props.work}</p>
+            </div>
+        </div>
+    )
+}
+
+export default Avatarlist
+
+_______________________________________
+
+Avatar.js
+
+import React from 'react';
+import './Avatar.css'
+import Avatarlist from './Avatarlist';
+
+const Avatar = () => {
+
+  const avatarListArray = [
+    {
+      id: 1,
+      name: "Hafeez",
+      work: "Web developer"
+    },
+    {
+      id: 2,
+      name: "Farah",
+      work: "Account executive"
+    },
+    {
+      id: 3,
+      name: "Salman",
+      work: "Dr. Nafrologist"
+    },
+    {
+      id: 4,
+      name: "Manzar",
+      work: "Crane Operator"
+    }
+
+  ]
+
+  return (
+    <div>
+      <h1 className="text-center text-secondary">Welcome to Hafeez</h1>
+      <div className="row">
+        <Avatarlist
+          id={avatarListArray[0].name} // this is destructuring
+          name={avatarListArray[0].name}
+          work={avatarListArray[0].work} />
+
+        <Avatarlist
+          id={avatarListArray[1].name}
+          name={avatarListArray[1].name}
+          work={avatarListArray[1].work} />
+
+        <Avatarlist
+          id={avatarListArray[2].name}
+          name={avatarListArray[2].name}
+          work={avatarListArray[2].work} />
+
+        <Avatarlist
+          id={avatarListArray[3].name}
+          name={avatarListArray[3].name}
+          work={avatarListArray[3].work} />
+      </div>
+      <button className="btn btn-danger">Subscribe</button>
+    </div>
+
+  )
+}
+
+export default Avatar;
+
+___________________________
+
+Avatar.css
+
+@import url('https://fonts.googleapis.com/css?family=Gugi&display=swap');
+.container { font-family: 'Gugi', cursive;}
+.AvatarStyle {
+    text-align: center;
+    padding: 5px 0px;
+    display: inline-block;
+    margin: 5px;
+    width: 100%;
+    transition: transform .2s; /* Animation */
+}
+.AvatarStyle:hover {
+  transform: scale(1.1);
+}
+.AvatarStyle img{
+    width:auto;
+    height:auto;
+}
+.AvatarStyle h1 {
+    font-size: 2rem;
+    color: white;
+    padding-top: 10px;
+}
+.AvatarStyle p {color: white;}
+.btnMargn {
+  margin-top: 30px;
+}

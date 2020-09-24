@@ -1,0 +1,31 @@
+import React, { Component } from 'react'
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      changeValue: ''
+    }
+  }
+  onChangeHandler = (event) => {
+    this.setState({
+      changeValue: event.target.value
+    })
+  }
+  render() {
+    let header = '';
+    if (this.state.changeValue) {
+       header = <h1>Hello, {this.state.changeValue}</h1>
+    } else {
+      header = '';
+    }
+    return (
+      <div>
+        {header}
+        <input type="text" onChange={this.onChangeHandler} />
+      </div>
+    )
+  }
+}
+
+export default App

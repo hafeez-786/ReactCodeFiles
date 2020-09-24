@@ -1,0 +1,25 @@
+import React from 'react';
+import './App.css';
+import { ButtonGroup, Button } from '@material-ui/core'
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React MUI Button group</h2>
+
+      Note : - 
+      1. If you want to same color on all buttons then set the properties on ButtonGrup
+      2. If you want disabled of all buttons then set the disabled property on ButtonGroup
+      3. If you want to set the button vertically the set this property orientation="vertical" on ButtonGroup
+      <ButtonGroup disabled variant="contained" color="primary"> 
+        <Button variant="contained" color="secondary">One</Button> // If you want to color on specific button
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+
+    </div>
+  );
+}
+
+export default App;

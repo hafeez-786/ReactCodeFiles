@@ -1,0 +1,55 @@
+React
+
+import React, { Component } from 'react'
+import './Demo.css'
+
+class Demo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false
+    }
+  }
+  changeColor = () => {
+    this.setState({ 
+      clicked: !this.state.clicked
+    });
+  }
+  render() {
+    let btn_class = this.state.clicked ? "peraColor" : "blkColor";
+    return (
+      <div>
+        <h1 className={btn_class}>sdkhfsg</h1>
+        <button onClick={() => this.changeColor()}>Click me to chnage color</button>
+      </div>
+    )
+  }
+}
+
+
+export default Demo
+
+_____________________________________________________________
+
+
+.demo, .demo1 {
+    font-size: 2rem;
+    background-color: tomato;
+    color: white;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.demo1 {background-color: yellow;}
+
+
+.peraColor {
+    color: red;
+}
+
+.blkColor {
+    color: black
+}

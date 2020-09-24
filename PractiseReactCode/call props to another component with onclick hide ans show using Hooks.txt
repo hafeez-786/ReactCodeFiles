@@ -1,0 +1,67 @@
+App.js
+
+import React, { useState } from 'react';
+import './Main.css';
+import './App.css'
+import Header from './Header';
+import Footer from './Footer';
+import Login from './Login';
+import Logout from './Logout'
+
+const App = () => {
+  const [hide, setShow] = useState(true)
+  const greeting = ['This is Hafeez Ali']
+  return (
+    <div>
+      <Header />
+       <div className="mainDiv">
+         <h2 className="text-center">This page is only for testing purpose</h2>
+         {
+           !hide ? <Login setShow={setShow}/> : <Logout setShow={setShow}/> 
+         } 
+         
+       </div>
+      <Footer />
+    </div >
+  )
+}
+
+export default App
+
+__________________________________
+
+Login.js
+
+import React from 'react'
+import Logout from './Logout';
+
+function Login(props) {
+    //const logged = props.setShow.bind(this);
+    return (
+        <div>
+            <h2>Welcome user!</h2>
+            <h3>Have a nice day.</h3>
+            <button onClick={() => props.setShow()}>Logout</button>
+        </div>
+    )
+}
+
+export default Login
+_____________________________________
+
+
+import React from 'react'
+
+function Logout(props) {
+    return (
+        <div>
+            <h2>Please sign up!</h2>
+            <h3>Create a Membership</h3>
+            <button onClick={() => props.setShow()}>
+                Login
+            </button>
+        </div>
+    )
+}
+
+export default Logout

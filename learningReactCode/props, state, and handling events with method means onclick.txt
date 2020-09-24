@@ -1,0 +1,53 @@
+App.js____________
+
+import React, { Component } from 'react';
+import './App.css';
+import Person from './Person/Person'
+
+class App extends Component {
+  state = {
+    persons: [
+      {name: "Hafeez", age: 28},
+      {name: "Manzar", age: 26},
+      {name: "Faizan", age: 18},
+    ]
+  } 
+  
+  btnClickHandler = () => {
+    console.log('button was clicked!');
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>This is React code.</h1>
+        <p>This is really working!</p>
+        <button onClick={this.btnClickHandler}>Click me</button>
+        <Person name={this.state.persons[0].name} age={this.state.persons[1].age} />
+        <Person name={this.state.persons[0].name} age={this.state.persons[1].age}>Wow! what a information.</Person>
+        <Person name={this.state.persons[0].name} age={this.state.persons[1].age} />
+      </div>
+    );
+    //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'This is React code.'));
+  }
+}
+
+export default App;
+
+
+Person.js_________________________
+
+import React from 'react'
+
+const person = (props) => { // If we are using child element the everything should be inside a DIV.
+    return (
+        <div>
+            <p>I 'm a {props.name}. I am {props.age} years old.</p>
+            <p>{props.children}</p>
+        </div>
+        
+    )
+};
+
+export default person
+

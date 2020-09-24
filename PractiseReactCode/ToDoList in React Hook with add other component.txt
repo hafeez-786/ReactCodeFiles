@@ -1,0 +1,148 @@
+import React, { useState, useEffect } from 'react'
+import './About.css'
+import ToDoList from '../About/ToDoList'
+
+const About = () => {
+  const [inputList, setInputList] = useState('');
+  const [Items, setItems] = useState([]);
+  const onChangeInput = (e) => {
+    setInputList(e.target.value);
+  }
+  const clickBtn = () => {
+    setItems((oldItems) => {
+      return [...oldItems, inputList];
+    });
+    setInputList(""); // For empty input
+  }
+  const deleteItems = (id) => {
+    console.log('deleted');
+    setItems((oldItems) => {
+      return oldItems.filter((arrElement, index) => {
+        return index !== id;
+      })
+    })
+  }
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 col-xs-12 ">
+          <div className="main_div">
+            <div className="center_div">
+              <h1>ToDo List</h1>
+              <input type="text" className="inputBox" value={inputList}
+                onChange={onChangeInput} placeholder="Add your items" />
+              <button className="btn" onClick={clickBtn}> + </button>
+
+              <ol>
+                {
+                  Items.map((itemValue, index) => {
+                    return <ToDoList 
+                    key={index}
+                    id={index} 
+                    onSelect={deleteItems}
+                    text={itemValue}/>
+                  })
+                }
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default About
+
+_____________________________________________________________
+
+below code is Component for above code
+
+import React from 'react';
+
+const ToDoList = (props) => {
+  return (
+    <div className="toDo_style">
+      <li>{props.text}</li>
+      <span onClick={() => {
+        props.onSelect(props.id)
+      }}>X</span>
+    </div>
+  )
+}
+
+export default ToDoList
+
+
+______________________________________________________________
+
+
+.main_div {
+    margin-top: 10px;
+    background-color:#6f8cdcbf;
+    width: 100%;
+    padding: 2rem;
+}
+.center_div {
+    margin: 0 auto;
+    border: 1px solid white;
+    width: 300px;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 6px;
+}
+.center_div > h1 {
+    margin: 20px 0px;
+    font-size: 1.5rem;
+    background-color: #9791bc;
+    padding: 6px;
+    color: white;
+}
+.inputBox {
+    width: 65%;
+    border: none;
+    border-bottom: 2px solid #9791bc;
+    margin-bottom: 12px;
+    color: #636363;
+}
+input.inputBox:focus {
+    border: none!important;
+}
+.inputBox::placeholder {
+    font-size: 16px;
+}
+.center_div .btn {
+    background: #9791bc;
+    color: white;
+    border-radius: 20px;
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0px 8px;
+    box-shadow: none;
+}
+
+.center_div .btn:hover {
+    background-color: green;
+}
+.center_div > ol {margin: 0px 8px;}
+.center_div > ol > .toDo_style > li {
+    text-align: left;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    color: #636363;
+    width: 70%;
+}
+.toDo_style { position: relative;}
+.toDo_style > span {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.toDo_style > span:hover {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+}

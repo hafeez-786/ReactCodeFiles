@@ -1,0 +1,30 @@
+import React, { Component } from 'react';
+import './App.css';
+
+const imagesPath = {
+  minus: "https://images.vexels.com/media/users/3/131484/isolated/preview/a432fa4062ed3d68771db7c1d65ee885-minus-inside-circle-icon-by-vexels.png",
+  plus: "https://cdn3.iconfinder.com/data/icons/glypho-generic-icons/64/plus-big-512.png"
+}
+
+class App extends Component {
+  state = {
+    open: true
+  }
+  toggleImage = () => {
+    this.setState(state => ({ open: !state.open }))
+  }
+
+  getImageName = () => this.state.open ? 'plus' : 'minus'
+  
+  render() {
+    const imageName = this.getImageName();
+    return (
+      <div className="App">
+        <h1>BIsmillah-hir-rehman-nirahim</h1>
+        <img style={{ maxWidth: '50px' }} src={imagesPath[imageName]} onClick={this.toggleImage} />
+      </div>
+    )
+  }
+}
+
+export default App;

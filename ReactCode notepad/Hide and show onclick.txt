@@ -1,0 +1,29 @@
+import React, { Component } from 'react'
+import './Demo.css'
+
+class Demo extends Component {
+  constructor() {
+    super() 
+    this.state = {
+      showMe: true
+    }
+  } 
+  clickMe() {
+    this.setState({
+      showMe:!this.state.showMe
+    })
+  }
+  render() {
+    return (
+      <div>
+        {
+          this.state.showMe ? <div id="demo">Div</div> : null
+        }
+        <button onClick={()=> this.clickMe()}>Click</button>
+      </div>
+     
+    )
+  }
+}
+
+export default Demo

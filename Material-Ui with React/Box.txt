@@ -1,0 +1,24 @@
+import React, { useState } from 'react';
+import './App.css';
+import { Box, Button } from '@material-ui/core'
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React Material UI | Layout | Box </h2>
+      {/* Box has default value is DIV but you can change into span, pera..etc using component */}
+      <Box 
+        component="span"
+        style={{color: 'red'}}
+        clone // It gives the value to the child element
+        m={10} // m for Margin
+        p={10} // P for padding
+      >
+        <Button>Hello</Button>
+      </Box>
+    </div>
+  );
+}
+
+export default App;

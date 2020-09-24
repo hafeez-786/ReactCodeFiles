@@ -1,0 +1,34 @@
+import React, {useState} from 'react';
+import './App.css';
+import { Slider } from '@material-ui/core'
+
+function App() {
+  const [val, setValue] = useState([40, 100])
+  const updateVal = (e, val) => {
+    setValue(val)
+  }
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React Material UI | Range Slider</h2>
+      <div className="slider-block">
+        <Slider
+        color="secondary"
+        value={val} 
+        max={200}
+        onChange={updateVal}
+        valueLabelDisplay="auto"
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+<style>
+.slider-block {
+  margin: 0 auto;
+  width: 400px; 
+}</style>

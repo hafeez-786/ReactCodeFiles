@@ -1,0 +1,44 @@
+import React, { useState } from 'react';
+import '../Demo/Demo.css';
+
+const Demo = () => {
+  const [cart, setCart] = useState([]);
+  
+  function addItemToCart(e) {
+    const item = e.target.value;
+    setCart(cart => [...cart, item]);
+  }
+  return (
+    <div className="Cart-App">
+      <div className="items">
+        <button value="MacBook Pro" onClick={addItemToCart} className="primary-btn">💻 MacBook Pro</button>
+        <button value="iPhone XS" onClick={addItemToCart} className="primary-btn">📱iPhone XS</button>
+        <button value="Gem" onClick={addItemToCart} className="primary-btn">💎 Gem</button>
+        <button value="Teddy Bear" onClick={addItemToCart} className="primary-btn">🧸 Teddy Bear</button>
+      </div>
+      <div className="items cart">
+        🛒Cart
+        <ul>
+          {cart.map(item => <li key={item}>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+export default Demo
+
+____________________________________________________________
+
+.Cart-App {
+   display: flex;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 200px;
+}
+.items .primary-btn {margin-bottom: 1em;}

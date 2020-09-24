@@ -1,0 +1,42 @@
+onclick change text using HOOK 
+_________________________________
+
+import React, { useState } from "react";
+
+const App = () => {
+   const [title, setTitle] = useState("Click here");
+
+   return <h1 onClick={() => setTitle("New title")}>{title}</h1>;
+}
+
+export default App
+
+
+onclick change text using normal class
+______________________________________
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+        title: 'click here'
+    }
+  }
+
+  changeText = () => {
+    this.setState({
+      title: "New title"
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.changeText}>Please change the text</button>
+        <h1>{this.state.title}</h1>
+      </div>
+    )
+  }
+}

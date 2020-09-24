@@ -1,0 +1,20 @@
+import React, {useState} from 'react';
+import '../Demo/Demo.css';
+
+const Demo = (props) => {
+  const names = ['James', 'Paul', 'John', 'George', 'Ringo'];
+
+  return (
+    <div className="myDiv">
+       {
+         names.filter(name => name.includes('J')).map((filteredName, index) => (
+           <ul key={index}>
+             <li>{filteredName}</li>
+           </ul>
+         ))
+       }
+    </div>
+  )
+}
+
+export default Demo

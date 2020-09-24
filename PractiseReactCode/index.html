@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>Demo</title>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/Demo.css">
+</head>
+
+<body>
+  <div class="flex-container">
+    <input id="age" type="text" value="">
+    <button onclick="myFunction()">Click Me</button>
+    <p id="demo"></p>
+  </div>
+
+  <script>
+    function myFunction() {
+      var age;
+      age = document.getElementById('age').value;
+      if (age < 18) {
+         document.getElementById("demo").innerHTML = "Too young";
+      } else if (isNaN(age)) {
+         document.getElementById("demo").innerHTML = "Value is not a number";
+      } else {
+        document.getElementById("demo").innerHTML = "Old enough to vote";
+      }
+    }
+  </script>
+</body>
+
+</html>

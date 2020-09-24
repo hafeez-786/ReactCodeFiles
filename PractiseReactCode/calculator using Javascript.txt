@@ -1,0 +1,127 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta http-equiv="Access-Control-Allow-Headers" content="*" />
+    <link rel="stylesheet" type="text/css" href="css/calculator.css">
+    <title>Reliance Health Insurance</title>
+  </head>
+
+  <body>
+    <div class="calc-block">
+      <form name="form">
+        <div class="contntCalc">
+        <div class="CalcDisplay">
+          <input type="text" id="clerTxt" onfocus="this.value=''" class="displayTxt" name="displayResult">
+        </div>
+        <div class="CalcBtnBlock">
+          <div class="btnRow">
+            <input type="button" onfocus="clerTxt.value=''" class="btn" value="C">
+          </div>
+          <div class="btnRow">
+            <input type="button" onclick="CalcNumbers(b7.value)" name="b7" class="btn" value="7">
+            <input type="button" onclick="CalcNumbers(b8.value)" name="b8" class="btn" value="8">
+            <input type="button" onclick="CalcNumbers(b9.value)" name="b9" class="btn" value="9">
+            <input type="button" onclick="CalcNumbers(divsn.value)" name="divsn" class="btn" value="/">
+          </div>
+          <div class="btnRow">
+            <input type="button" onclick="CalcNumbers(b4.value)" name="b4" class="btn" value="4">
+            <input type="button" onclick="CalcNumbers(b5.value)" name="b5" class="btn" value="5">
+            <input type="button" onclick="CalcNumbers(b6.value)" name="b6" class="btn" value="6">
+            <input type="button" onclick="CalcNumbers(multi.value)" name="multi" class="btn" value="*">
+          </div>
+          <div class="btnRow">
+            <input type="button" onclick="CalcNumbers(b1.value)" name="b1" class="btn" value="1">
+            <input type="button" onclick="CalcNumbers(b2.value)" name="b2" class="btn" value="2">
+            <input type="button" onclick="CalcNumbers(b3.value)" name="b3" class="btn" value="3">
+            <input type="button" onclick="CalcNumbers(subst.value)" name="subst" class="btn" value="-">
+          </div>
+          <div class="btnRow">
+            <input type="button" onclick="CalcNumbers(zero.value)" name="zero" class="btn" value="0"> 
+            <input type="button" onclick="CalcNumbers(dot.value)" name="dot" class="btn" value=".">
+            <input type="button" onclick="displayResult.value=eval(displayResult.value)" class="equalBtn btn" value="=">
+            <input type="button" onclick="CalcNumbers(plus.value)" name="plus" class="btn" value="&#43;">
+          </div>
+        </div>
+      </div>
+      </form>
+    </div> 
+  </body>
+ 
+  <script type="text/javascript" src="js/calculator.js"></script>
+</html>
+
+
+______________________________________________________________________________
+
+<script>
+
+function CalcNumbers(result) {
+	form.displayResult.value=form.displayResult.value+result;
+}
+</script>
+
+
+________________________________________________________________________________
+
+
+.calc-block {
+  width: 600px;
+  margin: 0 auto;
+  display: block;
+ }
+ .contntCalc {
+  position: relative;
+  width: 300px;
+  background: #545454;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px;
+  box-shadow: 4px 7px 11px 2px rgba(0, 0, 0, 0.8);
+ }
+ .CalcDisplay {
+  width: 300px;
+ }
+ .CalcDisplay .displayTxt {
+  width: 98%;
+  height: 45px;
+  border-radius: 6px;
+  /*background: #d1decd;*/
+  background:linear-gradient(to bottom, #9cc191 0%, rgb(195, 203, 192) 64%);
+  outline: none;
+  font-size: 1.8rem;
+  text-align: right;
+  padding-right: 3px;
+ }
+ .CalcBtnBlock {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 15px;
+ }
+ .CalcBtnBlock .btnRow {
+  margin: 10px 0px;
+ }
+ .CalcBtnBlock .btnRow input.btn {
+  width: 22%;
+  padding: 6px;
+  height: 45px;
+  border-radius: 6px;
+  border: 0;
+  margin: 3px;
+  background-color: #efefef;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #404040;
+  outline: none;
+  box-shadow: 4px 7px 11px 2px rgba(0, 0, 0, 0.63)
+ }
+ .equalBtn {
+  background-color:#f2b96a!important;
+  color: #fff!important;
+ }
+
+

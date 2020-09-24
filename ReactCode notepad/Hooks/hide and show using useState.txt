@@ -1,0 +1,41 @@
+import React, {useState} from 'react';
+
+const LifeCycle = () => {
+  const [showText, setShowText] = useState(false)
+  return(
+    <div>
+      {showText && <div>Please find out!</div>}
+      <button onClick={() => setShowText(!showText)}>Change text</button>
+    </div>
+  )
+}
+
+export default LifeCycle
+
+________________________________________________________________________________
+
+
+Incriment the value onclick by using lifeCycle method useEffect
+
+import React, {useState, useEffect} from 'react';
+import './LifeCycle.css';
+
+const LifeCycle = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = 'You clicked ${count} times'
+    console.log({count})
+  })
+  return(
+    <div>
+      <h1>This is Hafeez ALi</h1>
+      <p> You clicked {count} times </p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  )
+}
+
+export default LifeCycle

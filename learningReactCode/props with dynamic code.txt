@@ -1,0 +1,52 @@
+APP.JS_______________
+
+import React, { Component } from 'react';
+import './App.css';
+import Person from './Person/Person'
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>This is React code.</h1>
+        <p>This is really working!</p>
+        <Person name="Hafeez" age="28" />
+        <Person name="Manzar" age="26">Wow! what a information.</Person> // Child element
+        <Person name="Faizan" age="18" />
+      </div>
+    );
+    //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'This is React code.'));
+  }
+}
+
+export default App;
+
+
+Person.JS______________________
+
+import React from 'react'
+
+const person = (props) => {
+    return <p>I 'm a {props.name}. I am {props.age} years old.</p>
+};
+
+export default person
+
+
+_______OR props with child element ..when we use children element then everythig of HTML should be inside a DIV example below
+
+
+import React from 'react'
+
+const person = (props) => { // If we are using child element the everything should be inside a DIV.
+    return (
+        <div>
+            <p>I 'm a {props.name}. I am {props.age} years old.</p>
+            <p>{props.children}</p> // Child element
+        </div>
+        
+    )
+};
+
+export default person
+

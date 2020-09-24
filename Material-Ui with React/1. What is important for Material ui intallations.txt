@@ -1,0 +1,5 @@
+1. npm install @material-ui/core
+2. For Robotic font, below link should be update in Public/index.html 
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+3. npm install @material-ui/icons  - for using icons 
+4. npm install --save react-swipeable-views 

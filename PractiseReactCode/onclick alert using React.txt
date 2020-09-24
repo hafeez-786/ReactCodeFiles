@@ -1,0 +1,33 @@
+import React from 'react';
+import '../Demo/Demo.css';
+
+const Demo = () => {
+  const sayHello = (name) => {
+    alert('Hi Hafeez');
+  }
+  return (
+    <div className="myDiv">
+       <button onClick={sayHello}>Click Me</button>
+    </div>
+  )
+}
+
+export default Demo
+
+___________________________________________________________
+
+import React from 'react';
+import '../Demo/Demo.css';
+
+const Demo = () => {
+  const sayHello = (name) => {
+    alert(name);
+  }
+  return (
+    <div className="myDiv">
+       <button onClick={() => sayHello('James')}>Click Me</button>
+    </div>
+  )
+}
+
+export default Demo

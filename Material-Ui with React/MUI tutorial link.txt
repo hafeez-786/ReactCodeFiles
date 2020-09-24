@@ -1,0 +1,10 @@
+1. Remove row onclick button from cart
+2. Create a page for related Item for detail
+
+https://www.youtube.com/watch?v=0NbHbRdmGrs
+
+
+https://www.youtube.com/watch?v=gZMzwltieo8  react redux
+
+https://www.youtube.com/watch?v=VggH5l4Xheo&list=PL8p2I9GklV4722H3_nosmpdjNXIPuBUXm&index=10
+for Material UI above link

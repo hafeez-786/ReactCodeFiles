@@ -1,0 +1,32 @@
+import React, { Component } from 'react'
+import Modal from 'react-modal';
+
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            openMOdal: false
+        }
+    }
+    
+    toggleModal = () => {
+        this.setState({
+            openMOdal: !this.state.openMOdal
+        })
+    }
+
+
+    render() {
+        return (
+            <div>
+               <button className="btn btn-danger" onClick={this.toggleModal}>Open modal</button> 
+               <button className="btn btn-danger" onClick={this.toggleModal}>Close modal</button> 
+                <Modal isOpen={this.state.openMOdal} onRequestClose={this.toggleModal}>
+                    Hello i am modal
+                </Modal> 
+            </div>
+        )
+    }
+}
+
+export default App

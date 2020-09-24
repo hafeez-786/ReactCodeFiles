@@ -1,0 +1,65 @@
+App.JS___________
+
+import React, { useState } from 'react';
+import './App.css';
+import Person from './Person/Person'
+
+const App = props => {
+    const [ personState, setPerson ] = useState({
+      persons: [
+        {name: "Hafeez", age: 28},
+        {name: "Manzar", age: 26},
+        {name: "Faizan", age: 18},
+      ],
+      oherState: 'set other value'
+    });
+
+    //console.log(personState);
+
+    const btnClickHandler = () => {
+      //console.log('button was clicked!');
+      setPerson({
+        persons: [
+          {name: "Farah", age: 25},
+          {name: "Sharmin", age: 16},
+          {name: "Faizan", age: 18},
+        ]
+      });
+    }
+
+    return (
+      <div className="App">
+        <h1>This is React code.</h1>
+        <p>This is really working!</p>
+        <button onClick={btnClickHandler}>Click me</button>
+        <Person name={personState.persons[0].name} age={personState.persons[0].age} />
+        <Person name={personState.persons[1].name} age={personState.persons[1].age}>Wow! what a information.</Person>
+        <Person name={personState.persons[2].name} age={personState.persons[2].age} />
+      </div>
+    );
+    //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'This is React code.'));
+}
+
+export default App;
+
+
+Person.js__________
+
+import React from 'react'
+
+const person = (props) => { // If we are using child element the everything should be inside a DIV.
+    return (
+        <div>
+            <p>I 'm a {props.name}. I am {props.age} years old.</p>
+            <p>{props.children}</p>
+        </div>
+        
+    )
+};
+
+export default person
+
+
+
+
+

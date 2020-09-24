@@ -1,0 +1,30 @@
+import React, { useState } from 'react';
+import './App.css';
+import { Select, MenuItem } from '@material-ui/core'
+
+function App() {
+  const [course, setCourse] = useState("")
+  const updateValue = (e) => {
+    setCourse(e.target.value)
+  }
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React Material UI | Select Box or Select </h2>
+      <Select
+        value={course}
+        onChange={updateValue}
+        displayEmpty
+      >
+        <MenuItem value="">Select Course</MenuItem>
+        <MenuItem value={1}>JavaScript</MenuItem>
+        <MenuItem value={2}>Node</MenuItem>
+        <MenuItem value={3}>React</MenuItem>
+        <MenuItem value={4}>MongoDB</MenuItem>
+        <MenuItem value={5}>Angular</MenuItem>
+      </Select>
+    </div>
+  );
+}
+
+export default App;

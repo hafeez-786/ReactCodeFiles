@@ -1,0 +1,97 @@
+App.JS_____________
+
+import React, { Component } from 'react';
+import './App.css';
+import Person from './Person/Person'
+
+class App extends Component {
+  state = {
+    persons: [
+      {name: "Hafeez", age: 28},
+      {name: "Manzar", age: 26},
+      {name: "Faizan", age: 18},
+    ],
+    showPerson: false
+  } 
+  
+  btnClickHandler = () => {
+    //console.log('button was clicked!');
+    this.setState({
+      persons: [
+        {name: "Salman", age: 28},
+        {name: "Main", age: 26},
+        {name: "Faizan", age: 18},
+      ]
+    });
+  }
+
+  nameChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        {name: "Salman", age: 28},
+        {name: event.target.value, age: 26},
+        {name: "Faizan", age: 18},
+      ]
+    });
+  }
+
+  togglePersonHandler = () => { // hide and show div
+    const doesShow = this.state.showPerson;
+    this.setState({ showPerson: !doesShow});
+  }
+
+  render() { // inline css in jsx
+    const style = {
+      backgroundColor: 'white',
+      border: '1px solid blue',
+      font: 'inherit',
+      cursor: 'pointer',
+      padding: '8px'
+    }
+  
+    return (
+      <div className="App">
+        <h1>This is React code.</h1>
+        <p>This is really working!</p>
+        <button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>
+        { this.state.showPerson === true ? 
+          <div>
+            <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+            <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.btnClickHandler}
+            changed={this.nameChangeHandler}>Wow! what a information.</Person>
+            <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+         </div> : null
+        }
+      </div>
+    );
+    //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'This is React code.'));
+  }
+}
+
+export default App;
+
+Person.JS_____________
+
+import React from 'react'
+
+import './Person.css';
+
+const person = (props) => { // If we are using child element the everything should be inside a DIV.
+    return (
+        <div className="Person">
+            <p onClick={props.click}>I 'm a {props.name}. I am {props.age} years old.</p>
+            <p>{props.children}</p>
+            <input type="text" onChange={props.changed}/>
+        </div>
+        
+    )
+};
+
+export default person
+
+
+
+
+
+
+

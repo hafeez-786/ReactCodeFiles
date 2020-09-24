@@ -1,0 +1,45 @@
+import React, {Component} from 'react'
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      count: 0
+    }
+    this.addValue = this.addValue.bind(this);
+  }
+  addValue() {
+    this.setState({
+      count: this.state.count + 1
+    })
+  }
+  render() {
+    return(
+      <div>
+        <p>My count is {this.state.count}</p>
+        {/* <button onClick={this.addValue.bind(this)}>Click</button> */}
+        <button onClick={this.addValue}>Click</button>
+      </div>
+    )
+  }
+}
+
+export default App
+
+
+
+import React, {useState} from 'react'
+
+const App = () => {
+ const [count, setCount] = useState(0);
+ const handleClick = () => {
+  setCount(count + 1)
+ } 
+ return(
+   <div>
+     <p>My incriment value is : {count}</p>
+     <button onClick={handleClick}>Incriment</button>
+   </div>
+ )
+}
+export default App

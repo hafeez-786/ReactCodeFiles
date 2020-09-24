@@ -1,0 +1,79 @@
+App.js____
+
+import React, { Component } from 'react';
+import './App.css';
+import './Button/button.css';
+//import './Button/button'
+
+class App extends Component {
+  constructor() {
+    super()// 'super' keyword used to access and call function on an object's parent
+    this.state = { // 'state' object is used to store property and values that belongs to the component
+      showMe: true
+    }
+  }
+
+  operation() {
+    this.setState({ // when state changes the component respond by re-rendering
+      showMe: !this.state.showMe
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <button className="button" onClick={() => this.operation()}>Click me</button>
+        {
+          this.state.showMe ?
+            <div>
+              <div className="hideDIv">
+                <p>This is Hafeez and please hid me.</p>
+              </div>
+            </div>
+            : null
+        }
+      </div>
+    );
+  }
+}
+
+// const styles = { // dynamic inline CSS
+//   fontSize: '16px',
+//   backgoundColor: 'black',
+//   background: 'yellow',
+//   padding: '8px',
+//   border: '1px solid #ccc',
+//   outline: 'none',
+//   margin: '5px',
+//   boxShadow: '0px 2px 2px black',
+//   borderRadius: '6px'
+// }
+
+export default App;
+
+button.css______
+
+.button {
+    background-color: yellow;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    outline: none;
+    box-shadow: 0px 2px 2px black;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: inherit;
+  }
+
+.hideDIv {
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  background: rgb(201, 56, 56);
+  box-shadow: 0px 5px 4px rgb(31, 30, 30);
+}  
+

@@ -1,0 +1,40 @@
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+
+class LifeCyle extends Component {
+  constructor() {
+    super();
+    this.state = {
+      displayString: "We are in the constructor",
+      counter: 0,
+      counterDisplayUpdate: false
+    }
+  }
+  componentDidMount = () => {
+    this.setState({
+      displayString: "We are in the component",
+      counterDisplayUpdate: true
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(this.state.counterDisplayUpdate === true) {
+      console.log(" component just updated!")
+      this.setState({
+        counter: this.state.counter + 1,
+        counterDisplayUpdate: false
+      });
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>React Life Cycle Method</h1>
+        <h2>Current state change to counter: {this.state.counter}</h2>
+        <h3>{this.state.displayString}</h3>
+      </div>
+    )
+  }
+}
+
+export default LifeCyle

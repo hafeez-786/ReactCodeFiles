@@ -1,0 +1,39 @@
+import React from 'react';
+import './App.css';
+import { Container } from '@material-ui/core'
+
+function App() {
+  return (
+    <div className="App">
+      {/* 
+         1. Container has default value lg= 1280px;
+         2. We can set the width by maxWidth so we can set the max width property
+            md= 960px, lg=1280px, sm=600px, xs=444px
+         3. 'Fixed' We can use fixed within container - This will auto set width as per shrink size 
+            means responsive as per device size.    
+      */}
+      <Container maxWidth="xs" style={{ backgroundColor: 'skyblue' }}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Layout | Container </h2>
+      </Container>
+      <Container maxWidth="sm" style={{ backgroundColor: 'orange' }}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Layout | Container </h2>
+      </Container>
+      <Container maxWidth="md" style={{ backgroundColor: 'brown' }}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Layout | Container </h2>
+      </Container>
+      <Container maxWidth="lg" style={{ backgroundColor: 'pink' }}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Layout | Container </h2>
+      </Container>
+      <Container fixed style={{ backgroundColor: 'pink' }}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Layout | Container </h2>
+      </Container>
+    </div>
+  );
+}
+
+export default App;

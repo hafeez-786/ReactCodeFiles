@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+import './App.css';
+import { Button } from '@material-ui/core'
+import Delete from '@material-ui/icons/Delete'
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React UI</h2>
+      <Button
+        color="primary"
+        variant="contained"
+        //startIcon={<Delete />}
+        endIcon={<Delete />}
+        >
+        Click me
+      </Button>
+    </div>
+  );
+}
+
+export default App;

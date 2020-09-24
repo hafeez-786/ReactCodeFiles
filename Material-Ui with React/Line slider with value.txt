@@ -1,0 +1,56 @@
+import React from 'react';
+import './App.css';
+import { Slider } from '@material-ui/core'
+
+function App() {
+  const mark = [
+    {
+      value: 0,
+      label: "start"
+    },
+    {
+      value: 100,
+      label: "middle"
+    },
+    {
+      value: 200,
+      label: "stop"
+    },
+    {
+      value: 40,
+      label: "custom"
+    }
+  ]
+  const getValue = (e, value) => {
+     console.warn(value)
+  }
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React MUI Slider</h2>
+      <div className="slider-block">
+        <Slider
+        defaultValue={100} // It will be default value of max value
+        max={200} // You can set maximum value
+        step={20} // It will ahead after every 20 width of the slide by the cursor
+        marks={mark} // It is for set the value
+        valueLabelDisplay="auto" // On cursor scroll show the value on the top of Line
+        color="secondary" 
+        onChange={getValue} // If we want value of the line by onChange
+        orientation="vertical"
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+<style>
+.slider-block {
+  margin: 0 auto;
+  /* width: 400px; */
+  height: 400px;
+}
+</style>

@@ -1,0 +1,61 @@
+import React, {useState} from 'react';
+import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
+import './App.css';
+import { Container } from '@material-ui/core'
+import { Menu, MenuItem, Button } from '@material-ui/core'
+
+function App() {
+  const [anchor, setAnchor] = useState(null)
+  const openMenu = (e) => {
+    setAnchor(e.currentTarget)
+  }
+  const closeMenu = (e) => {
+    setAnchor(null)
+ }
+  return (
+    <div className="App">
+      <div style={{ textAlign: 'center' }}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Menu </h2>
+      </div>
+      <Container>
+        <Router>
+          <Button onClick={openMenu}>Menu</Button>
+          <Menu open={Boolean(anchor)} onClose={closeMenu}>
+            <MenuItem onClick={closeMenu}><Link to="/">Home</Link></MenuItem>
+            <MenuItem onClick={closeMenu}><Link to="/about">About</Link></MenuItem>
+            <MenuItem onClick={closeMenu}><Link to="/contact">Contact</Link></MenuItem>
+          </Menu>
+          
+          <Route exact path="/"><Home /></Route>
+          <Route path="/about"><About /></Route>
+          <Route path="/contact"><Contact /></Route>
+        </Router>
+      </Container>
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+      <h1>Home page</h1>
+    </div>
+  )
+}
+function About() {
+  return (
+    <div>
+      <h1>About page</h1>
+    </div>
+  )
+}
+function Contact() {
+  return (
+    <div>
+      <h1>Contact page</h1>
+    </div>
+  )
+}
+
+export default App

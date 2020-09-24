@@ -1,0 +1,43 @@
+JSON file
+__________________
+
+[
+    {
+        "id": 1,
+        "imgName": "./static/media/sunset.49d476d1.jpg",
+        "name": "salman"
+    },
+    {
+        "id": 2,
+        "imgName": "./static/media/sunset.49d476d1.jpg",
+        "name": "Mithun"
+    }
+]
+
+
+App.js
+_______________________
+
+import dataImage from './data.json'
+import React from 'react';
+
+function App() {
+ 
+    return (
+      <div>
+        {
+        dataImage.map((data, index) => {
+          return (
+            <div key={index}>
+              <img src={data.imgName} />
+              <span>{data.name}</span>
+            </div>
+          )
+        })
+      }
+      </div>
+    )
+
+}
+
+export default App

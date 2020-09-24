@@ -1,0 +1,30 @@
+import React, { useState } from 'react';
+import './App.css';
+//import {Checkbox} from '@material-ui/core'
+import Checkbox from '@material-ui/core/Checkbox'
+import {Favorite, FavoriteBorder} from '@material-ui/icons'
+
+function App() {
+  const [name, setName] = useState([])
+  function getValue(e) {
+    let data = name;
+    data.push(e.target.value)
+    console.log(data)
+  }
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React MUI Checkbox</h2>
+      <Checkbox color="primary" value="Hafeez" onChange={(e) => { getValue(e) }} />
+      <Checkbox color="primary" value="Manzar" onChange={(e) => { getValue(e) }} />
+      <Checkbox color="primary" value="Faizan" onChange={(e) => { getValue(e) }} />
+      <Checkbox color="primary" indeterminate/>
+      <Checkbox color="primary" color="secondary"
+      icon={<FavoriteBorder />}
+      checkedIcon={<Favorite/>}
+      />
+    </div>
+  );
+}
+
+export default App;

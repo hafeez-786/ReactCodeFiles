@@ -1,0 +1,17 @@
+import React, {useState, useEffect} from 'react';
+
+const Demo = () => {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []); 
+  return(
+    <div>
+       {seconds} seconds have elepsed since mounting
+    </div>
+  )
+}
+export default Demo

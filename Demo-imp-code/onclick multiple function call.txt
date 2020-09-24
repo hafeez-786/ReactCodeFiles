@@ -1,0 +1,24 @@
+import React, { Component } from 'react';
+import './App.css';
+
+
+class App extends Component {
+  render() {
+    const greetingOne = () => {
+      console.log('Hafeez')
+    }
+    
+    const greetingTwo = () => {
+      console.log('Manzar')
+    }
+    
+    return (
+      <div className="App">
+        <h1>BIsmillah-hir-rehman-nirahim</h1>
+        <button onClick={()=> {greetingOne(); greetingTwo()}}>Click me</button>
+      </div>
+    )
+  }
+}
+
+export default App;

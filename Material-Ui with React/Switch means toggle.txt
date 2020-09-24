@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+import './App.css';
+import {Switch} from '@material-ui/core'
+
+function App() {
+  const getValue = (e, val) => {
+    console.log(val)
+  }
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React Material UI | Switch </h2>
+      <Switch 
+      color="primary"
+      size="medium"
+      onChange={getValue}
+      />
+    </div>
+  );
+}
+
+export default App;

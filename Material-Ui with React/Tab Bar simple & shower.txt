@@ -1,0 +1,55 @@
+import React, { useState } from 'react';
+import './App.css';
+import { Container, Tab, Tabs, AppBar } from '@material-ui/core'
+
+function App() {
+  const [value, setValue] = useState(0)
+  const handleTabs = (e, val) => {
+    //console.log(val)
+    setValue(val)
+  }
+  return (
+    <div className="App">
+      <div style={{textAlign: 'center'}}>
+        <h1>Bismillah-hir-rehman-nirrahim</h1>
+        <h2>React Material UI | Tabs </h2>
+      </div>
+      <Container>
+        <AppBar position="static" color="secondary">
+          <Tabs value={value} onChange={handleTabs}>
+            <Tab label="Item 1" />
+            <Tab label="Item 2" />
+            <Tab label="Item 3" />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          <h2>Item one Details</h2>
+          <p>Aamir</p>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <h2>Item Two Details</h2>
+          <p>Sharukh</p>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <h2>Item Three Details</h2>
+          <p>salman</p>
+        </TabPanel>
+      </Container>
+    </div>
+  );
+}
+
+function TabPanel(props) {
+  const { children, value, index } = props
+  return (
+    <div>
+      {
+        value == index && (
+          <div>{children}</div>
+        )
+      }
+    </div>
+  )
+}
+
+export default App;

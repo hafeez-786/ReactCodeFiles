@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/gallery.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <title>NextGen</title>
+</head>
+
+<body>
+
+  <div class="container margn-bottom">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-pad">
+        <h1 class="portfolio-heading">Modal design for Interior</h1>
+        <p class="portfolio-text text-center">Design your dream home</p>
+        <div class="col-12">
+          <div class="card mt-3 tab-card">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    data-image="img/Kurla/living-room3.jpg" data-target="#image-gallery">
+                    <img class="img-thumbnail" src="img/Kurla/living-room3.jpg" alt="design">
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    data-image="img/Kurla/living-room4.jpg" data-target="#image-gallery">
+                    <img class="img-thumbnail" src="img/Kurla/living-room4.jpg" alt="design">
+                  </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    data-image="img/Kurla/living-room5.jpg" data-target="#image-gallery">
+                    <img class="img-thumbnail" src="img/Kurla/living-room5.jpg" alt="design">
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
+                    data-image="img/Kurla/living-room6.jpg" data-target="#image-gallery">
+                    <img class="img-thumbnail" src="img/Kurla/living-room6.jpg" alt="design">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="image-gallery-title" style="display: none;"></h4>
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+              class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+        </div>
+        <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i
+            class="fa fa-arrow-left"></i>
+        </button>
+
+        <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i
+            class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

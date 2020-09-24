@@ -1,0 +1,29 @@
+import React, { Component } from 'react'
+
+class LifeCycle extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: true
+    }
+  }
+
+  changeTitle = () => {
+    this.setState({
+      title: !this.state.title
+    })
+  }
+  render() {
+    return (
+      <div>
+        {
+          this.state.title? "Salman Ali" : "Hafeez"
+        }
+        <br />
+        <button onClick={this.changeTitle}>Click me</button>
+      </div>
+    )
+  }
+}
+
+export default LifeCycle

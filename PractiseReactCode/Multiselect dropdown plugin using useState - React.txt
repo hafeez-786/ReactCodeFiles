@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import {Multiselect} from 'multiselect-react-dropdown'
+import './Demo.css';
+
+function Demo() {
+  const Data = [
+    {Country: "India", id: 1},
+    {Country: "America", id: 2},
+    {Country: "Frence", id: 3},
+    {Country: "Germany", id: 4}   
+  ]
+  const [options] = useState(Data);
+  return (
+    <div className="dropdown_select">
+      <div>
+        <h3>Multiselect dropdown useState</h3>
+        <Multiselect options={options} displayValue="Country" />
+      </div>
+    </div>
+  )
+}
+export default Demo
+
+______________________________________________________________
+
+.dropdown_select {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.dropdown_select h3 {
+    color: red;
+    padding: 20px 0px 5px;
+}

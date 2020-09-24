@@ -1,0 +1,31 @@
+import React from 'react';
+import './App.css';
+import { Container, Grid, Hidden } from '@material-ui/core'
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Bismillah-hir-rehman-nirrahim</h1>
+      <h2>React Material UI | Hidden </h2>
+      <Container>
+        <Grid item container spacing={2}>
+          <Grid item lg={3} sm={6} xs={12}>
+            <h1 style={{ backgroundColor: "green", color: 'white' }}>Block 1</h1>
+          </Grid>
+          <Grid item lg={3} sm={6} xs={12} >
+            <h1 style={{ backgroundColor: "GreenYellow", color: 'white' }}>Block 2</h1>
+          </Grid>
+          {/* We can use hidden as single how as only="sm" */}
+          <Hidden only={['sm', 'xs']}> 
+            <h1 style={{ backgroundColor: "Maroon", color: 'white', flexGrow: '1', padding: '8px'}}>Block 3</h1>
+          </Hidden>
+          <Grid item lg={3} sm={6} xs={12}>
+            <h1 style={{ backgroundColor: "MidnightBlue", color: 'white' }}>Block 4</h1>
+          </Grid>
+        </Grid>
+      </Container>
+    </div>
+  );
+}
+
+export default App;
